@@ -1,0 +1,61 @@
+{
+    "name": "redchamps/module-easy-cache-clean",
+    "description": "Clean invalidated cache(s) easily in a Magento 2 store",
+    "type": "magento2-module",
+    "keywords": [
+        "php",
+        "magento",
+        "magento2",
+        "admin",
+        "ui",
+        "cache"
+    ],
+    "homepage": "https://redchamps.com/easy-cache-clean-magento-2-extension.html",
+    "readme": "README.md",
+    "license": [
+        "OSL"
+    ],
+    "authors": [
+        {
+            "name": "RedChamps",
+            "email": "hello@redchamps.com",
+            "homepage": "https://redchamps.com/",
+            "role": "maintainer"
+        },
+        {
+            "name": "Ravinder",
+            "email": "rav@redchamps.com",
+            "homepage": "https://twitter.com/_iamRav",
+            "role": "maintainer"
+        },
+        {
+            "name": "Sanchit",
+            "email": "sanchit@redchamps.com",
+            "homepage": "https://twitter.com/_techDriven",
+            "role": "maintainer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/redchamps/easy-cache-clean/",
+        "issues": "https://github.com/redchamps/easy-cache-clean/issues/"
+    },
+    "require": {
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-admin-notification": "*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "RedChamps\\EasyCacheClean\\": ""
+        }
+    }
+}

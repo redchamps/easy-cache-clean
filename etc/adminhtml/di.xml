@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\AdminNotification\Model\System\Message\CacheOutdated">
+        <plugin name="easyCacheClean.notification" type="RedChamps\EasyCacheClean\Plugin\CacheOutdatedMessage"/>
+    </type>
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="easyCacheClean.button" type="RedChamps\EasyCacheClean\Plugin\ToolbarButtons"/>
+    </type>
+</config>
