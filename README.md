@@ -10,7 +10,7 @@ Also, you can find the **Flush Invalidated Cache(s)** button under the Cache Man
 
 ## Screenshots
 ### Top Notification
-![Primary Navigation](https://raw.githubusercontent.com/redchamps/repo-images/master/easy-cache-clean/cache-clean-notification.png)
+![Primary Navigation](https://raw.githubusercontent.com/redchamps/repo-images/master/easy-cache-clean/cache-clean-notification.gif)
 
 ### Cache Management
 
