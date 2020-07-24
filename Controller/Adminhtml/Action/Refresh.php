@@ -9,6 +9,8 @@ class Refresh extends Cache
 {
     public function execute()
     {
+        $ajaxResponse = ["error" => true];
+        $message = "";
         try {
             $types = $this->_getCacheTypesForRefresh();
             $typeIds = array_keys($types);
@@ -22,14 +24,25 @@ class Refresh extends Cache
                 $updatedTypes++;
             }
             if ($updatedTypes > 0) {
-                $this->messageManager->addSuccessMessage(__("%1 cache type(s) refreshed.", implode(', ',$types)));
+                $message = __("%1 cache type(s) refreshed.", implode(', ',$types));
+                $ajaxResponse['error'] = false;
+                $this->addMessage($message);
             } else {
-                $this->messageManager->addNoticeMessage(__("Nothing to flush as no cache is at invalid state."));
+                $message = __("Nothing to flush as no cache is at invalid state.");
+                $this->addMessage($message, "notice");
             }
         } catch (LocalizedException $e) {
-            $this->messageManager->addErrorMessage($e->getMessage());
+            $message = $e->getMessage();
+            $this->addMessage($message, "error");
         } catch (\Exception $e) {
-            $this->messageManager->addExceptionMessage($e, __('An error occurred while refreshing cache.'));
+            $message = __('An error occurred while refreshing cache.');
+            $this->messageManager->addExceptionMessage($e, $message);
+        }
+
+        if($this->getRequest()->isAjax()) {
+            $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+            $ajaxResponse['message'] = $message;
+            return $resultJson->setData($ajaxResponse);
         }
 
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
@@ -51,5 +64,21 @@ class Refresh extends Cache
             $output[$type->getId()] = $type->getCacheType();
         }
         return $output;
+    }
+
+    protected function addMessage($message, $type = "success")
+    {
+        if(!$this->getRequest()->isAjax()) {
+            switch ($type) {
+                case "success":
+                    $this->messageManager->addSuccessMessage($message);
+                    break;
+                case "error":
+                    $this->messageManager->addErrorMessage($message);
+                    break;
+                default:
+                    $this->messageManager->addNoticeMessage($message);
+            }
+        }
     }
 }

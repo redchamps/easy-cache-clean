@@ -24,9 +24,9 @@ class CacheOutdatedMessage
 
     public function afterGetText(CacheOutdated $subject, $result)
     {
-        $url = $this->_urlBuilder->getUrl('cacheclean/action/refresh');
-        $result = str_replace(".", ".<br/>", rtrim($result, "."));
-        $result .= __(' or <a href="%1">Click Here</a> to refresh them instantly.', $url);
+        $parts = explode(".", $result);
+        $url = $this->_urlBuilder->getUrl('easy-cache-clean/action/refresh');
+        $result = $parts[0]. __('. Please <a id="easy-cache-clean" href="%1">Click Here</a> to refresh them instantly.', $url);
         return $result;
     }
 }
