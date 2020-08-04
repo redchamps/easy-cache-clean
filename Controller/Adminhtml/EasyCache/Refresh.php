@@ -1,5 +1,5 @@
 <?php
-namespace RedChamps\EasyCacheClean\Controller\Adminhtml\Action;
+namespace RedChamps\EasyCacheClean\Controller\Adminhtml\EasyCache;
 
 use Magento\Backend\Controller\Adminhtml\Cache;
 use Magento\Framework\Controller\ResultFactory;

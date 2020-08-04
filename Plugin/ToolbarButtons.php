@@ -20,7 +20,7 @@ class ToolbarButtons
         ButtonList $buttonList
     ) {
         if ($context instanceof Cache) {
-            $url = $context->getUrl('easy-cache-clean/action/refresh');
+            $url = $context->getUrl('adminhtml/easyCache/refresh');
 
             $message = __('Are you sure that you want to refresh the cache?');
             $buttonList->add(
