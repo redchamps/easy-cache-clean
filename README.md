@@ -1,8 +1,8 @@
 # Easy Cache Clean - Magento 2 Extension 
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/redchamps/module-easy-cache-clean.svg?style=flat-square)](https://packagist.org/packages/redchamps/module-easy-cache-clean)  [![Packagist](https://img.shields.io/packagist/dt/redchamps/module-easy-cache-clean.svg?style=flat-square)](https://packagist.org/packages/redchamps/module-easy-cache-clean/stats) [![Packagist](https://img.shields.io/packagist/dm/redchamps/module-easy-cache-clean.svg?style=flat-square)](https://packagist.org/packages/redchamps/module-easy-cache-clean/stats)
+<img src="https://img.shields.io/badge/magento-2.4.0%E2%80%932.4.8+-brightgreen.svg?logo=magento&longCache=true&style=flat-square" alt="Supported Magento Versions" />
 
-**Compatibility check** Compatible with latest Magento version 2.4.7-p3
 
 It will allow you to refresh the invalidated Magento 2 cache(s) instantly without jumping into the System > Cache Management.
 Once any cache gets invalidated then a link to refresh cache will be visible in the admin top notification bar. You just have to click on the link and that's it.
